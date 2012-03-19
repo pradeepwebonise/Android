@@ -16,8 +16,9 @@ public final class R {
     public static final class id {
         public static final int ItemCaption=0x7f050000;
         public static final int btn_add=0x7f050002;
+        public static final int btn_display=0x7f050003;
         public static final int editText_listname=0x7f050001;
-        public static final int my_listview=0x7f050003;
+        public static final int my_listview=0x7f050004;
     }
     public static final class layout {
         public static final int item=0x7f030000;

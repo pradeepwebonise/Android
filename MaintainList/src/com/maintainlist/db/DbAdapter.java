@@ -10,7 +10,7 @@ import android.util.Log;
 
 abstract public class DbAdapter {
 	protected static SQLiteDatabase db;
-	protected static PolsDatabaseHelper dbHelper;
+	protected static listDatabaseHelper dbHelper;
 	protected String dbName;
 	protected String[] dbColumns;
 	protected Context context;
@@ -27,7 +27,7 @@ abstract public class DbAdapter {
 	abstract protected void setDbColumns();
 
 	final public static void open(Context context) throws SQLException {
-		dbHelper = new PolsDatabaseHelper(context);
+		dbHelper = new listDatabaseHelper(context);
 		try {
 			db = dbHelper.getWritableDatabase();
 		} catch (SQLiteException e) {
@@ -58,7 +58,7 @@ abstract public class DbAdapter {
 	public final boolean delete(String where) {
 		return db.delete(dbName, where, null) > 0;
 	}
-
+	
 	public final void delete() {
 		db.delete(dbName, null, null);
 	}

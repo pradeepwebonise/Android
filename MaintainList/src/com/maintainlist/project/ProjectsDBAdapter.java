@@ -26,7 +26,7 @@ public class ProjectsDBAdapter extends DbAdapter {
 	protected void setDbColumns() {
 		this.dbColumns = new String[] { "_id", LIST_NAME  };
 	}
-
+	
 	@Override
 	protected void setDbName() {
 		this.dbName = "maintain_list";
@@ -43,12 +43,11 @@ public class ProjectsDBAdapter extends DbAdapter {
 	public ArrayList<ProjectData> getProjectsList() {
 		Cursor projectC = this.fetchAll(null, null);
 		ArrayList<ProjectData> projectList = new ArrayList<ProjectData>();
-
+		Log.i("sizeeeee",String.valueOf(projectC.getCount()));
 		while (projectC.moveToNext()) {
 			ProjectData proj_data = new ProjectData(projectC);
 			projectList.add(proj_data);
 		}
-
 		return projectList;
 	}
 	

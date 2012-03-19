@@ -17,15 +17,13 @@ public class ProjectData {
 	String listName;
 	
 	public ProjectData() {
-
+		super();
 	}
 
 	public ProjectData(Cursor c) {
 
 		super();
-		if (c.moveToFirst()) {
-
-			
+		if (c.moveToFirst()) {			
 			this.listName = c.getString(c
 					.getColumnIndex(ProjectsDBAdapter.LIST_NAME));
 		}
