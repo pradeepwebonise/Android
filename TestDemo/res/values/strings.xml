@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, TestDemoActivity!</string>
+    <string name="table_layout_4_text"> Text Content </string>
+    <string name="table_layout_4_open_shortcut"> Ctr-o </string>
+    <string name="table_layout_4_save"> Save </string>
+    <string name="type_here"> Type here: </string>
+    <string name="table_layout_4_save_shortcut"> Ctr-shift-s </string>
+    <string name="app_name">TestDemo</string>
+	
+</resources>

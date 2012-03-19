@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Table Layout -->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:stretchColumns="1">
+   
+<TableRow>
+        <TextView
+            android:text="@string/table_layout_4_text"
+            android:padding="3dip" />
+        <TextView
+            android:id="@+id/text_content"
+            android:text="@string/table_layout_4_open_shortcut"
+            android:gravity="right"
+            android:padding="3dip" />
+</TableRow>
+<TableRow >
+    	<TextView
+    	    android:text="@string/table_layout_4_save"
+    	    android:padding="3dip" />
+    	<TextView
+    	    android:text="@string/table_layout_4_save_shortcut"
+    	    android:gravity="right"
+    	    android:padding="3dip"
+    	    />
+</TableRow>
+</TableLayout>
