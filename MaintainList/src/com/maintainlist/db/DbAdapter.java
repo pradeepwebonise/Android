@@ -31,7 +31,7 @@ abstract public class DbAdapter {
 		try {
 			db = dbHelper.getWritableDatabase();
 		} catch (SQLiteException e) {
-			Log.w("POLS",
+			Log.w("LIST",
 					"ProjectsDbAdapter::getWritableDatabase error: "
 							+ e.getMessage());
 		}
@@ -58,7 +58,7 @@ abstract public class DbAdapter {
 	public final boolean delete(String where) {
 		return db.delete(dbName, where, null) > 0;
 	}
-	
+
 	public final void delete() {
 		db.delete(dbName, null, null);
 	}

@@ -6,6 +6,7 @@ import com.maintainlist.project.ProjectsDBAdapter;
 
 public class ProjectData {
 
+	String listName;
 	public String getListName() {
 		return listName;
 	}
@@ -13,9 +14,6 @@ public class ProjectData {
 	public void setListName(String listName) {
 		this.listName = listName;
 	}
-
-	String listName;
-	
 	public ProjectData() {
 		super();
 	}

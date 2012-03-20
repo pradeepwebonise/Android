@@ -8,7 +8,6 @@ import android.database.Cursor;
 import android.util.Log;
 
 import com.maintainlist.db.DbAdapter;
-import com.maintainlist.model.ProjectData;
 
 public class ProjectsDBAdapter extends DbAdapter {
 
@@ -40,15 +39,22 @@ public class ProjectsDBAdapter extends DbAdapter {
 		return super.update(rowId, values);
 	}
 
-	public ArrayList<ProjectData> getProjectsList() {
+	public ArrayList<String> getProjectsList() {
 		Cursor projectC = this.fetchAll(null, null);
-		ArrayList<ProjectData> projectList = new ArrayList<ProjectData>();
+//		ArrayList<ProjectData> projectList = new ArrayList<ProjectData>();
+//		Log.i("sizeeeee",String.valueOf(projectC.getCount()));
+//		while (projectC.moveToNext()) {
+//			ProjectData proj_data = new ProjectData(projectC);
+//			projectList.add(proj_data);
+//		}		
+		ArrayList<String> mArrayList = new ArrayList<String>();
 		Log.i("sizeeeee",String.valueOf(projectC.getCount()));
-		while (projectC.moveToNext()) {
-			ProjectData proj_data = new ProjectData(projectC);
-			projectList.add(proj_data);
-		}
-		return projectList;
+		projectC.moveToFirst();
+		while(!projectC.isAfterLast()) {
+		     mArrayList.add(projectC.getString(projectC.getColumnIndex(ProjectsDBAdapter.LIST_NAME)));
+		     projectC.moveToNext();
+		}		
+		return mArrayList;
 	}
 	
 	public void deleteAll() {

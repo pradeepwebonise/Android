@@ -20,20 +20,11 @@
         android:onClick="onClick"
         android:layout_alignParentRight="true"/>
 
-        <Button
-         android:id="@+id/btn_display" 
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:text="Display"
-         android:width="100dp"
-         android:onClick="onClick"
-         android:layout_below="@id/editText_listname"
-          />	
         <ListView
            android:id="@+id/my_listview" 
            android:layout_height="fill_parent"
            android:layout_width="fill_parent"
-           android:layout_below="@id/btn_display"
+           android:layout_below="@id/editText_listname"
            android:descendantFocusability="afterDescendants">
     	</ListView>
 		
