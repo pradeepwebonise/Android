@@ -13,13 +13,13 @@ public class listDatabaseHelper extends SQLiteOpenHelper {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 	}
 
+	/* Creating maintain_list table into database */
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		try {
 			// Android requires _id
 			String createSql = "CREATE TABLE maintain_list (_id INTEGER PRIMARY KEY AUTOINCREMENT, "
 					+ "list_name TEXT );";
-
 			Log.v("LIST", "########Creating project_resources: " + createSql);
 			db.execSQL(createSql);
 			createSql = null;

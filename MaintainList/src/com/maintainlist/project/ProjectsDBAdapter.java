@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.util.Log;
 
 import com.maintainlist.db.DbAdapter;
 
@@ -13,19 +12,18 @@ public class ProjectsDBAdapter extends DbAdapter {
 
 	public ProjectsDBAdapter(Context context) {
 		super(context);
-		Log.i("Dbbbbbb Adapater Dataaaaaaaaa", "flag000000");
 		setDbName();
-		setDbColumns();
-	}
+		setDbColumns(); 
+		}
 
 	public String ROWID = "_id";
 	public final static String LIST_NAME = "list_name";
-
+	// setting database columns
 	@Override
 	protected void setDbColumns() {
 		this.dbColumns = new String[] { "_id", LIST_NAME };
 	}
-
+	 // Setting database name
 	@Override
 	protected void setDbName() {
 		this.dbName = "maintain_list";
@@ -35,21 +33,19 @@ public class ProjectsDBAdapter extends DbAdapter {
 		return super.create(values);
 	}
 
-	public boolean delete(String selectedFromList) 
-	{
-		Log.i("delete fun from PrjectDBAdapter.......: ", selectedFromList.toString());
+	public boolean delete(String selectedFromList) {
 		return super.delete(selectedFromList);
 	}
-	
+
 	public boolean update(String itemName, ContentValues values) {
 		return super.update(itemName, values);
 	}
-
+	/* fetching data from database and add it into arraylist*/
 	public ArrayList<String> getProjectsList() {
-		Cursor projectC = this.fetchAll(null, null);
+		Cursor projectC = this.fetchAll(null, null);  /* Fetching data from database store into cursor */
 		ArrayList<String> mArrayList = new ArrayList<String>();
-		Log.i("sizeeeee", String.valueOf(projectC.getCount()));
 		projectC.moveToFirst();
+		/* fetching data from cursor and stored it into arraylist */
 		while (!projectC.isAfterLast()) {
 			mArrayList.add(projectC.getString(projectC
 					.getColumnIndex(ProjectsDBAdapter.LIST_NAME)));
@@ -57,15 +53,4 @@ public class ProjectsDBAdapter extends DbAdapter {
 		}
 		return mArrayList;
 	}
-
-	public void deleteAll() {
-		try {
-			db.beginTransaction();
-			this.delete();
-			db.setTransactionSuccessful();
-		} finally {
-			db.endTransaction();
-		}
-
-	}
-}
+} /* End of ProjectsDBAdapter class */

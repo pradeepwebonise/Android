@@ -47,64 +47,36 @@ abstract public class DbAdapter {
 		}
 	}
 
+	/* Insert records into database */
 	public long create(ContentValues initialValues) {
 		return db.insert(dbName, null, initialValues);
 	}
 
+	/* Update records into database */
 	public boolean update(String itemName, ContentValues updateValues) {
 		int status;
-		itemName = "list_name = '"+itemName+"'";
-		Log.i("UPATE ,,,,,,,,,", updateValues.toString());
+		itemName = "list_name = '" + itemName + "'";
 		status = db.update(dbName, updateValues, itemName, null);
-		//  status = db.update(table, values, whereClause, whereArgs)
-		//	Log.i("Status: ", status.);
-		return true;
-	
+		if (status > 0)
+			return true;
+		else
+			return false;
 	}
 
+	/* Delete records from database */
 	public boolean delete(String where) {
-		int st=0;
-		Log.i("Delete from DbAdapter", where.toString());
-		where = "list_name = '"+where+"'";
-		Log.i("queryyryryyy:::  ", where.toString());
+		int st;
+		where = "list_name = '" + where + "'";
 		st = db.delete(dbName, where, null);
-		return true;
+		if (st > 0)
+			return true;
+		else
+			return false;
 	}
 
-	public final void delete() {
-		db.delete(dbName, null, null);
-	}
-
+	/* fetch all records from database */
 	public Cursor fetchAll(String where, String limit) {
 		return db.query(dbName, dbColumns, where, null, null, null, limit);
-	}
-
-	public Cursor fetch(long rowId) throws SQLException {
-		Cursor mCursor = db.query(true, dbName, dbColumns, "_id=" + rowId,
-				null, null, null, null, null);
-//db.delete(table, whereClause, whereArgs)
-		if (mCursor != null) {
-			mCursor.moveToFirst();
-		}
-
-		return mCursor;
-	}
-
-	final public int getCount() {
-		int cnt;
-
-		Cursor c = db.rawQuery("SELECT count(*) AS our_count FROM " + dbName,
-				null);
-
-		if (c.moveToFirst()) {
-			cnt = c.getInt(0);
-		} else {
-			cnt = 0;
-		}
-
-		c.close();
-
-		return cnt;
 	}
 
 	final public void beginTransaction() {
