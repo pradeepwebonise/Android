@@ -14,13 +14,16 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int btn_add=0x7f050005;
+        public static final int btn_add=0x7f050008;
         public static final int btn_cancel=0x7f050003;
         public static final int btn_delete=0x7f050002;
-        public static final int editText_listname=0x7f050004;
-        public static final int my_listview=0x7f050006;
+        public static final int btn_update=0x7f050006;
+        public static final int editText_listname=0x7f050007;
+        public static final int editText_update=0x7f050005;
+        public static final int my_listview=0x7f050009;
         public static final int txt_deleteContent=0x7f050001;
         public static final int txt_warningsmess=0x7f050000;
+        public static final int txt_warningsupdate=0x7f050004;
     }
     public static final class layout {
         public static final int item_delete=0x7f030000;

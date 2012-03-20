@@ -51,8 +51,15 @@ abstract public class DbAdapter {
 		return db.insert(dbName, null, initialValues);
 	}
 
-	public boolean update(Long rowId, ContentValues updateValues) {
-		return db.update(dbName, updateValues, "_id=" + rowId, null) > 0;
+	public boolean update(String itemName, ContentValues updateValues) {
+		int status;
+		itemName = "list_name = '"+itemName+"'";
+		Log.i("UPATE ,,,,,,,,,", updateValues.toString());
+		status = db.update(dbName, updateValues, itemName, null);
+		//  status = db.update(table, values, whereClause, whereArgs)
+		//	Log.i("Status: ", status.);
+		return true;
+	
 	}
 
 	public boolean delete(String where) {

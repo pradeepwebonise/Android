@@ -5,38 +5,30 @@
         
         <TextView
         android:id="@+id/txt_warningsmess"
-        android:text="Enter new values"
+        android:text="Enter new value:"
         android:layout_width="wrap_content" 
         android:layout_height="wrap_content" 
         android:layout_alignParentLeft="true"
         android:padding="5dp"
         android:textSize="15sp"/>
          
-               
-        <TextView
-		 android:id="@+id/txt_deleteContent"
-     	 android:layout_width="wrap_content"
-     	 android:layout_height="wrap_content"
-     	 android:layout_toRightOf="@+id/txt_warningsmess"
-     	 android:padding="5dp"
-     	 android:textSize="15sp"
-     	/>
-        <Button 
-		android:id="@+id/btn_delete"
-		android:text="Delete"
+        <EditText 
+         android:id="@+id/editText_update"
+         android:layout_width="190dp"
+         android:layout_height="35dp"
+         android:layout_toRightOf="@id/txt_warningsmess"
+         android:textSize="10dp"
+        />
+                   
+       <Button 
+		android:id="@+id/btn_update"
+		android:text="Update"
 		android:layout_width="wrap_content"   
 		android:layout_height="wrap_content" 
 		android:onClick="onClick"
-		android:layout_below="@id/txt_warningsmess"   
+		android:layout_below="@id/editText_update"
+   
 		/>        
-        <Button 
-        android:id="@+id/btn_cancel"
-        android:text="Cancel"
-        android:layout_width="wrap_content"   
-		android:layout_height="wrap_content" 
-		android:layout_below="@id/txt_warningsmess"
-		android:onClick="onClick" 
-		android:layout_toRightOf="@id/btn_delete"  
-        />
+       
 				
 </RelativeLayout>

@@ -41,8 +41,8 @@ public class ProjectsDBAdapter extends DbAdapter {
 		return super.delete(selectedFromList);
 	}
 	
-	public boolean update(long rowId, ContentValues values) {
-		return super.update(rowId, values);
+	public boolean update(String itemName, ContentValues values) {
+		return super.update(itemName, values);
 	}
 
 	public ArrayList<String> getProjectsList() {
