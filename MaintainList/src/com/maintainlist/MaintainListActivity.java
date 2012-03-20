@@ -44,7 +44,7 @@ public class MaintainListActivity extends Activity {
 						.getItemAtPosition(myItemInt));
 				/* switch on next activity */
 				Intent intent = new Intent(MaintainListActivity.this,
-						ListItemDeleteActivity.class); 
+						ListItemDeleteUpdateActivity.class); 
 				intent.putExtra("selectedFromList", selectedFromList);
 				startActivity(intent);
 			}
