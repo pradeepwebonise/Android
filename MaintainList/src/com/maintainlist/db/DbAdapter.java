@@ -55,8 +55,13 @@ abstract public class DbAdapter {
 		return db.update(dbName, updateValues, "_id=" + rowId, null) > 0;
 	}
 
-	public final boolean delete(String where) {
-		return db.delete(dbName, where, null) > 0;
+	public boolean delete(String where) {
+		int st=0;
+		Log.i("Delete from DbAdapter", where.toString());
+		where = "list_name = '"+where+"'";
+		Log.i("queryyryryyy:::  ", where.toString());
+		st = db.delete(dbName, where, null);
+		return true;
 	}
 
 	public final void delete() {
@@ -70,7 +75,7 @@ abstract public class DbAdapter {
 	public Cursor fetch(long rowId) throws SQLException {
 		Cursor mCursor = db.query(true, dbName, dbColumns, "_id=" + rowId,
 				null, null, null, null, null);
-
+//db.delete(table, whereClause, whereArgs)
 		if (mCursor != null) {
 			mCursor.moveToFirst();
 		}

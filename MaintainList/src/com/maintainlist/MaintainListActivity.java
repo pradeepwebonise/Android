@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -35,6 +38,20 @@ public class MaintainListActivity extends Activity {
 		Log.i("btnnnnnnnnnnnn:", str1);
 		dbFunctions = new DbFunctions(this);
 		fetchFromDB();
+		final ListView lv = (ListView) findViewById(R.id.my_listview);
+
+		lv.setOnItemClickListener(new OnItemClickListener() {
+			public void onItemClick(AdapterView<?> myAdapter, View myView,
+					int myItemInt, long mylng) {
+				String selectedFromList = (String) (lv
+						.getItemAtPosition(myItemInt));
+				Log.i("list view id .....:: ", selectedFromList);
+				
+				 Intent intent = new Intent(MaintainListActivity.this, ListItemDeleteActivity.class);
+				 intent.putExtra("selectedFromList", selectedFromList);
+				 startActivity(intent);
+			}
+		});
 	}
 
 	public void onClick(View v) {
@@ -74,7 +91,7 @@ public class MaintainListActivity extends Activity {
 		projectAdpt.create(values);
 		// Log.i("Store Dataaaaaaaaa", "flag5");
 	}
-	
+
 	/* Fetching from Database */
 	public void fetchFromDB() {
 		// Log.i("fetchfrom db", "display ..............");

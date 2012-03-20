@@ -7,6 +7,7 @@ import com.maintainlist.project.ProjectsDBAdapter;
 public class ProjectData {
 
 	String listName;
+
 	public String getListName() {
 		return listName;
 	}
@@ -14,6 +15,7 @@ public class ProjectData {
 	public void setListName(String listName) {
 		this.listName = listName;
 	}
+
 	public ProjectData() {
 		super();
 	}
@@ -21,7 +23,7 @@ public class ProjectData {
 	public ProjectData(Cursor c) {
 
 		super();
-		if (c.moveToFirst()) {			
+		if (c.moveToFirst()) {
 			this.listName = c.getString(c
 					.getColumnIndex(ProjectsDBAdapter.LIST_NAME));
 		}
