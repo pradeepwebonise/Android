@@ -32,7 +32,7 @@ abstract public class DbAdapter {
 			db = dbHelper.getWritableDatabase();
 		} catch (SQLiteException e) {
 			Log.w("LIST",
-					"ProjectsDbAdapter::getWritableDatabase error: "
+					"ListsDbAdapter::getWritableDatabase error: "
 							+ e.getMessage());
 		}
 	}
