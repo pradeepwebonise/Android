@@ -1,65 +1,72 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content" >
-
-    <TextView
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+	    
+	    android:layout_width="fill_parent" 
+    	android:layout_height="wrap_content">
+        
+        <TextView
         android:id="@+id/txt_warningsmess"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:padding="5dp"
         android:text="Do you want to Delete?"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/txt_deleteContent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/txt_warningsmess"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
+        android:layout_alignParentLeft="true"
         android:padding="5dp"
-        android:textSize="15sp" />
-
-    <Button
-        android:id="@+id/btn_delete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txt_warningsmess"
-        android:onClick="onClick"
-        android:text="Delete" />
-
-    <Button
+        android:textSize="15sp"/>
+         
+               
+        <TextView
+		 android:id="@+id/txt_deleteContent"
+     	 android:layout_width="wrap_content"
+     	 android:layout_height="wrap_content"
+     	 android:layout_toRightOf="@+id/txt_warningsmess"
+     	 android:padding="5dp"
+     	 android:textSize="15sp"
+     	/>
+        <Button 
+		android:id="@+id/btn_delete"
+		android:text="Delete"
+		android:layout_width="wrap_content"   
+		android:layout_height="wrap_content" 
+		android:onClick="onClick"
+		android:layout_below="@id/txt_warningsmess"   
+		/>        
+        <Button 
         android:id="@+id/btn_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/txt_warningsmess"
-        android:layout_toRightOf="@id/btn_delete"
-        android:onClick="onClick"
-        android:text="Cancel" />
-
-    <TextView
+        android:text="Cancel"
+        android:layout_width="wrap_content"   
+		android:layout_height="wrap_content" 
+		android:layout_below="@id/txt_warningsmess"
+		android:onClick="onClick" 
+		android:layout_toRightOf="@id/btn_delete"  
+        />
+		
+        <TextView
         android:id="@+id/txt_warningsupdate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:text="Update item name:"
+        android:layout_width="wrap_content" 
+        android:layout_height="wrap_content" 
         android:layout_alignParentLeft="true"
         android:layout_below="@id/btn_delete"
         android:padding="5dp"
-        android:text="Update item name:"
-        android:textSize="15sp" />
-
-    <EditText
-        android:id="@+id/editText_update"
-        android:layout_width="220dp"
-        android:layout_height="35dp"
-        android:layout_below="@id/btn_delete"
-        android:layout_toRightOf="@id/txt_warningsmess"
-        android:textSize="15dp" />
-
-    <Button
-        android:id="@+id/btn_update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/editText_update"
-        android:onClick="onClick"
-        android:text="Update" />
-
+        android:textSize="15sp"/>
+        
+        <EditText 
+         android:id="@+id/editText_update"
+         android:layout_width="220dp"
+         android:layout_height="35dp"
+         android:layout_below="@id/btn_delete"
+         android:layout_toRightOf="@id/txt_warningsmess"
+         android:textSize="15dp"
+        />
+                   
+       <Button 
+		android:id="@+id/btn_update"
+		android:text="Update"
+		android:layout_width="wrap_content"   
+		android:layout_height="wrap_content" 
+		android:onClick="onClick"
+		android:layout_below="@id/editText_update"
+   
+		/>        
+         
+		
 </RelativeLayout>
